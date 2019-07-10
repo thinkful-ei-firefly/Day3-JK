@@ -20,8 +20,6 @@ function updateObject(obj){
     return obj;
 }
 
-let newObj = updateObject(thisObj);
-console.log(newObj.bizz);
 
 function personMaker() {
   var person = {
@@ -44,5 +42,8 @@ const sampleObj = {
 };
 
 function keyDeleter(obj) {
-  // your code here
+  delete obj.foo;
+  delete obj.bar;
+  return obj;
 }
+
