@@ -10,5 +10,17 @@ function createMyObject () {
     }
   };
 }
+let thisObj = createMyObject();
+
+function updateObject(obj){
+    obj.foo = 'foo';
+    obj.bar = 'bar';
+    obj.bizz = 'bizz';
+    obj.bang = 'bang';
+    return obj;
+}
+
+let newObj = updateObject(thisObj);
+console.log(newObj.bizz);
 
 
