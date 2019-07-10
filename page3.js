@@ -28,3 +28,13 @@ let hobbitMeals= {
 };
 
 //console.log(hobbitMeals.meals[3]);
+
+let one = [{name: "Jeremy", jobTitle: "a Carpenter"},
+ {name: "Sophie", jobTitle: "a Clerk"},
+ {name: "Tom", jobTitle: "a Astronaut"},
+ {name: "Aragorn", jobTitle: "a King"},
+ {name: "Boromir", jobTitle: "Dead"}]
+
+ /*for (let i = 0; i < one.length; i++){
+     console.log(`${one[i].name} is ${one[i].jobTitle}`);
+ }*/
