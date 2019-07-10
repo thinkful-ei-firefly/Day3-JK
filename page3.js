@@ -22,3 +22,9 @@ let fooObj = {
 /*for (const key in fooObj){
     console.log(`${key}: ${fooObj[key]}`);
 }*/
+
+let hobbitMeals= {
+  meals : ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
+
+//console.log(hobbitMeals.meals[3]);
