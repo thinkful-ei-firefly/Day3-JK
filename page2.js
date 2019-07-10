@@ -54,3 +54,28 @@ function findById (items, idNum) {
 
 const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
 //console.log(findById(data, 2)); // should return {id: 2, foo: 'bizz'}
+
+
+function validateKeys(object, expectedKeys){
+    let keys = Object.keys(object);
+    for (let i = 0; i < expectedKeys.length; i++){
+        if (keys[i] !== expectedKeys[i])
+            return false;
+    }
+    return true;
+}
+
+const objectA = {
+    id: 2,
+    name: 'Jane Doe',
+    age: 34,
+    city: 'Chicago',
+  };
+  const objectB = {
+    id: 3,
+    age: 33,
+    city: 'Peoria',
+  };
+  const expectedKeys = ['id', 'name', 'age', 'city'];
+  //console.log(validateKeys(objectA, expectedKeys));
+  //console.log(validateKeys(objectB, expectedKeys));
