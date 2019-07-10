@@ -15,35 +15,27 @@ function findOne(arr, query){
   for (let i = 0; i < arr.length; i++){
     for (const key in query){
       match = false;
-      console.log(query[key]);
-      console.log(arr[i][key]);
+      //console.log(query[key]);
+      //console.log(arr[i][key]);
       if (query[key] === arr[i][key]){
         match = true;
       } else {
         break;
       }
-      console.log(match);
-      console.log('break line \n\n');
+      //console.log(match);
+      //console.log('break line \n\n');
     }
     if (match === true)
       return arr[i];
   }
   return null;
 }
-//console.log(findOne(HEROES, {id: 1}));
-//console.log(findOne(HEROES, { id: 10 }));
-//console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
-//console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
-//console.log(findOne(HEROES, { squad: 'Justice League' }));
+console.log(findOne(HEROES, {id: 1}));
+console.log(findOne(HEROES, { id: 10 }));
+console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
+console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
+console.log(findOne(HEROES, { squad: 'Justice League' }));
 
-/**
-   * check each key in query
-   * if it exists in heroes
-   *    check if it matches
-   *        stop if it doesnt
-   * 
-   * 
-   */
 
 const Database = {
   store: {

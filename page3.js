@@ -36,7 +36,7 @@ let one = [{name: "Jeremy", jobTitle: "Carpenter", boss: 'Sophie'},
   {name: "Boromir", jobTitle: "Dead", boss: 'Death'}]
 
 /*for (let i = 0; i < one.length; i++){
-  if (one[i].boss === undefined) {
+  if (one[i].boss === undefined) { //if (!boss in one[i])
     console.log (`${one[i].jobTitle} ${one[i].name} doesn\'t report to anybody`)
   } else{
     console.log(`${one[i].jobTitle} ${one[i].name} reports to ${one[i].boss}`);
@@ -78,7 +78,8 @@ function createCharacter (name, nickname, race, origin, attack, defense, weapon)
     attack,
     defense,
     weapon,
-    describe: function () {console.log(`${this.name} is a ${this.race} from ${this.origin} and uses ${this.weapon}`)},
+    describe: function () {
+        console.log(`${this.name} is a ${this.race} from ${this.origin} and uses ${this.weapon}`)},
     evaluateFight: function (character) {
       let damageDealt = this.attack-character.defense;
       let damageTaken = character.attack - this.defense;
@@ -99,23 +100,23 @@ let characters = [
 
 characters.push(createCharacter('Arwen Undomiel', 'Arwen', 'half-elf', 'Rivendell', 4, 4, 'Hadafang'));
 
-/*let arag = characters.find(function(item) {
+let arag = characters.find(function(item) {
     if (item.nickname === 'Aragorn')
         return true;
     return false;
 });
-arag.describe();*/
+arag.describe();
 
-/*let hobbits = characters.filter(function(item){
+let hobbits = characters.filter(function(item){
     if (item.race === 'hobbit')
         return true;
     return false;
 });
-console.log(hobbits);*/
+console.log(hobbits);
 
-/*let strong = characters.filter(function(item){
+let strong = characters.filter(function(item){
     return item.attack > 5;
 });
-console.log(strong);*/
-//characters[4].describe();
-//console.log(characters[1].evaluateFight(characters[0]));
+console.log(strong);
+characters[4].describe();
+console.log(characters[1].evaluateFight(characters[0]));
