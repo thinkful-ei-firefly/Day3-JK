@@ -44,26 +44,62 @@ let one = [{name: "Jeremy", jobTitle: "Carpenter", boss: 'Sophie'},
 }*/
 
 let cipher = {
-    a: 2,
-    b: 3,
-    c: 4,
-    d: 5
+  a: 2,
+  b: 3,
+  c: 4,
+  d: 5
 }
 
 function decode(code){
-    let letter = code.charAt(0);
-    let num = cipher[letter];
-    if (num !== undefined)
-        return code.charAt(num - 1);
-    return ' ';
+  let letter = code.charAt(0);
+  let num = cipher[letter];
+  if (num !== undefined)
+    return code.charAt(num - 1);
+  return ' ';
 }
 
 function breakCode(code){
-    let splitCode = code.split(" ");
-    let brokenCode = '';
-    for (let i = 0; i < splitCode.length; i++){
-        brokenCode += decode(splitCode[i]);
-    }
-    return brokenCode;
+  let splitCode = code.split(" ");
+  let brokenCode = '';
+  for (let i = 0; i < splitCode.length; i++){
+    brokenCode += decode(splitCode[i]);
+  }
+  return brokenCode;
 }
 //console.log(breakCode('craft block argon meter bells brown croon droop'));
+
+
+function createCharacter (names, nicknames, races, origins, attacks, defenses) {
+  return {
+    name: names,
+    nickname: nicknames,
+    race: races,
+    origin: origins,
+    attack: attacks,
+    defense: defenses,
+    describe: function () {console.log(`${this.name} is a ${this.race} from ${this.origin}`)},
+    evaluateFight: function (character) {
+      let damageDealt = this.attack-character.defense;
+      let damageTaken = character.attack - this.defense;
+      if (damageDealt < 0) {damageDealt = 0};
+      if (damageTaken < 0) {damageTaken = 0};
+      return `Your opponent takes ${damageDealt} damage and you receive ${damageTaken} damage`;
+    }
+
+
+
+  }
+}
+
+let characters = [
+  createCharacter ('Gandalf the White', 'Gandalf', 'wizard', 'Middle Earth', 10, 6),
+  createCharacter ('Bilbo Baggins', 'Bilbo', 'hobbit', 'The Shire', 2, 1),
+  createCharacter ('Frodo Baggins', 'Frodo', 'hobbit', 'The Shire', 3, 2),
+  createCharacter ('Aragorn son of Arathorn', 'Aragorn', 'human', 'Dunnedain', 6, 8),
+  createCharacter ('Legolas', 'Legolas', 'elf', 'Woodland Realm', 8, 5),
+];
+
+characters.push(createCharacter('Arwen Undomiel', 'Arwen', 'half-elf', 'Rivendell', 4, 4));
+
+console.log(characters[5]);
+
