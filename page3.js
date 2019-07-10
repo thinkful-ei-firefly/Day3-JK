@@ -43,3 +43,27 @@ let one = [{name: "Jeremy", jobTitle: "Carpenter", boss: 'Sophie'},
   }
 }*/
 
+let cipher = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+}
+
+function decode(code){
+    let letter = code.charAt(0);
+    let num = cipher[letter];
+    if (num !== undefined)
+        return code.charAt(num - 1);
+    return ' ';
+}
+
+function breakCode(code){
+    let splitCode = code.split(" ");
+    let brokenCode = '';
+    for (let i = 0; i < splitCode.length; i++){
+        brokenCode += decode(splitCode[i]);
+    }
+    return brokenCode;
+}
+//console.log(breakCode('craft block argon meter bells brown croon droop'));
