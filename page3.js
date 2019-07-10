@@ -8,6 +8,17 @@ let loaf = {
   }
 }
 
-console.log(loaf.flour);
+/*console.log(loaf.flour);
 console.log(loaf.water);
-console.log(loaf.hydration());
+console.log(loaf.hydration());*/
+
+let fooObj = {
+    foo: "hello",
+    bar: "goodbye",
+    fum: "today",
+    quux: "42",
+    spam: "juink"
+}
+/*for (const key in fooObj){
+    console.log(`${key}: ${fooObj[key]}`);
+}*/
