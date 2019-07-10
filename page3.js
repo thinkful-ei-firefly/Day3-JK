@@ -69,15 +69,16 @@ function breakCode(code){
 //console.log(breakCode('craft block argon meter bells brown croon droop'));
 
 
-function createCharacter (names, nicknames, races, origins, attacks, defenses) {
+function createCharacter (name, nickname, race, origin, attack, defense, weapon) {
   return {
-    name: names,
-    nickname: nicknames,
-    race: races,
-    origin: origins,
-    attack: attacks,
-    defense: defenses,
-    describe: function () {console.log(`${this.name} is a ${this.race} from ${this.origin}`)},
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+    weapon,
+    describe: function () {console.log(`${this.name} is a ${this.race} from ${this.origin} and uses ${this.weapon}`)},
     evaluateFight: function (character) {
       let damageDealt = this.attack-character.defense;
       let damageTaken = character.attack - this.defense;
@@ -85,21 +86,36 @@ function createCharacter (names, nicknames, races, origins, attacks, defenses) {
       if (damageTaken < 0) {damageTaken = 0};
       return `Your opponent takes ${damageDealt} damage and you receive ${damageTaken} damage`;
     }
-
-
-
   }
 }
 
 let characters = [
-  createCharacter ('Gandalf the White', 'Gandalf', 'wizard', 'Middle Earth', 10, 6),
-  createCharacter ('Bilbo Baggins', 'Bilbo', 'hobbit', 'The Shire', 2, 1),
-  createCharacter ('Frodo Baggins', 'Frodo', 'hobbit', 'The Shire', 3, 2),
-  createCharacter ('Aragorn son of Arathorn', 'Aragorn', 'human', 'Dunnedain', 6, 8),
-  createCharacter ('Legolas', 'Legolas', 'elf', 'Woodland Realm', 8, 5),
+  createCharacter ('Gandalf the White', 'Gandalf', 'wizard', 'Middle Earth', 10, 6, 'Wizard Staff'),
+  createCharacter ('Bilbo Baggins', 'Bilbo', 'hobbit', 'The Shire', 2, 1, 'The Ring'),
+  createCharacter ('Frodo Baggins', 'Frodo', 'hobbit', 'The Shire', 3, 2, 'Sting and Barrow Blade'),
+  createCharacter ('Aragorn son of Arathorn', 'Aragorn', 'human', 'Dunnedain', 6, 8, 'Anduril'),
+  createCharacter ('Legolas', 'Legolas', 'elf', 'Woodland Realm', 8, 5, "Bow and Arrow"),
 ];
 
-characters.push(createCharacter('Arwen Undomiel', 'Arwen', 'half-elf', 'Rivendell', 4, 4));
+characters.push(createCharacter('Arwen Undomiel', 'Arwen', 'half-elf', 'Rivendell', 4, 4, 'Hadafang'));
 
-console.log(characters[5]);
+/*let arag = characters.find(function(item) {
+    if (item.nickname === 'Aragorn')
+        return true;
+    return false;
+});
+arag.describe();*/
 
+/*let hobbits = characters.filter(function(item){
+    if (item.race === 'hobbit')
+        return true;
+    return false;
+});
+console.log(hobbits);*/
+
+/*let strong = characters.filter(function(item){
+    return item.attack > 5;
+});
+console.log(strong);*/
+//characters[4].describe();
+//console.log(characters[1].evaluateFight(characters[0]));
